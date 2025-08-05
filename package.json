@@ -1,9 +1,13 @@
 {
   "name": "llms-txt-generator-geo-ai",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Generate llms.txt file for GEO",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roi-kol/geoAI.git"
+  },
   "bin": {
     "generate-llms-txt": "bin/cli.js"
   },
