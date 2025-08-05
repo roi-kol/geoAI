@@ -1,0 +1,59 @@
+{
+  "name": "llms-txt-generator-geo-ai",
+  "version": "1.0.10",
+  "description": "Generate llms.txt file for GEO",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "generate-llms-txt": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepare": "npm run build",
+    "postinstall": "node ./scripts/postinstall.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "llms",
+    "txt",
+    "geo",
+    "generator",
+    "typescript",
+    "react",
+    "nextjs",
+    "ai"
+
+    
+  ],
+  "author": "Roi Kolbinger",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.4.0",
+    "typescript": "^5.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "ts-node": ">=10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ts-node": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist/",
+    "bin/",
+    "scripts/",
+    "templates/",
+    "*.d.ts"
+  ]
+}
