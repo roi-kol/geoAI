@@ -43,6 +43,19 @@ const config: LLMSTxtConfig = {
     allowDataDeletion: 'No',
     allowDataModification: 'No',
     contact: 'me@geo.ai',
+    host: 'https://www.mysite.com',
+    sitemap: 'https://www.mysite.com/sitemap,xml',
+    license: 'your license and tearm of use',
+    documents: [
+      {
+        title: 'API Refernce',
+        url: 'https://www.mysite.com/docs/api-refernce'
+      },
+      {
+        title: 'Frequently Asked Questions',
+        url: 'https://www.mysite.com/docs/faq'
+      }
+    ],
     userAgentRules: [
       {
         userAgent: '*',
@@ -82,6 +95,19 @@ export default config;
     allowDataDeletion: 'No',
     allowDataModification: 'No',
     contact: 'me@geo.ai',
+    host: 'https://www.mysite.com',
+    sitemap: 'https://www.mysite.com/sitemap,xml',
+    license: 'your license and tearm of use',
+    documents: [
+      {
+        title: 'API Refernce',
+        url: 'https://www.mysite.com/docs/api-refernce'
+      },
+      {
+        title: 'Frequently Asked Questions',
+        url: 'https://www.mysite.com/docs/faq'
+      }
+    ],
     userAgentRules: [
       {
         userAgent: '*',

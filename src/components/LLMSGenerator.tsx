@@ -215,6 +215,37 @@ export const LLMSGenerator: React.FC<LLMSGeneratorProps> = ({
         />
       </div>
 
+      <div className="form-group">
+        <label htmlFor="host">Host:</label>
+        <input
+          id="host"
+          type="text"
+          value={geoData.host || ''}
+          onChange={(e) => handleInputChangeEvent('host', e)}
+          placeholder="e.g., https://www.mysite.com"
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="sitemap">Sitemap:</label>
+        <input
+          id="sitemap"
+          type="text"
+          value={geoData.sitemap || ''}
+          onChange={(e) => handleInputChangeEvent('sitemap', e)}
+          placeholder="e.g., https://www.mysite.com/sitemap,xml"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="license">License:</label>
+        <input
+          id="license"
+          type="text"
+          value={geoData.license || ''}
+          onChange={(e) => handleInputChangeEvent('license', e)}
+          placeholder="e.g., your license and tearm of use"
+        />
+      </div>
       <button 
         onClick={handleGenerate} 
         disabled={isGenerating}

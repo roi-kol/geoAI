@@ -1,6 +1,6 @@
 {
   "name": "llms-txt-generator-geo-ai",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Generate llms.txt file for GEO",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

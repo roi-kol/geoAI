@@ -100,6 +100,19 @@ module.exports = {
     allowDataDeletion: "No",
     allowDataModification: "No",
     contact: "me@geo.ai",
+    host: "https://www.mysite.com",
+    license : "your license and tearm of use"
+    sitemap: "https://www.mysite.com/sitemap,xml",
+    documents:[
+      {
+        title:"API Refernce",
+        url: "https://www.mysite.com/docs/api-refernce",
+      }
+      {
+        title:"Frequently Asked Questions",
+        url: "https://www.mysite.com/docs/faq",
+      }
+    ]
     userAgentRules: [
       {
         userAgent: "*",
@@ -114,6 +127,7 @@ module.exports = {
         disallow: ["/private/"],
       },
     ],
+
   },
   outputDir: "./public",
   filename: "llms.txt",
@@ -189,6 +203,11 @@ interface UserAgentRule {
   userAgent: string;
   disallow: string[];
 }
+export interface Document {
+  title: string;
+  url: string;
+
+}
 
 interface GeoData {
   location?: string;
@@ -207,6 +226,10 @@ interface GeoData {
   allowDataModification?: string;
   contact?: string;
   userAgentRules?: UserAgentRule[];
+  host?: string;
+  sitemap?: string;
+  license?: string;
+  documents?: Document[];
 }
 
 interface LLMSTxtOptions {
@@ -300,6 +323,7 @@ Allow-Data-Storage: No
 Allow-Data-Deletion: No
 Allow-Data-Modification: No
 Contact: me@geo.ai
+
 
 ## user-agent rules
 User-agent: *

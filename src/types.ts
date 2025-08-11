@@ -5,6 +5,11 @@ export interface UserAgentRule {
   userAgent: string;
   disallow: string[];
 }
+export interface Document {
+  title: string;
+  url: string;
+
+}
 
 export interface GeoData {
   location?: string;
@@ -23,6 +28,10 @@ export interface GeoData {
   allowDataModification?: string;
   contact?: string;
   userAgentRules?: UserAgentRule[];
+  host?: string;
+  sitemap?: string;
+  license?: string;
+  documents?: Document[];
 }
 
 export interface LLMSTxtConfig {
@@ -53,6 +62,7 @@ export class LLMSTxtGenerator {
       geoData: options.geoData || {},
     };
   }
+
 
   private generateContent(): string {
     const { geoData } = this.options;
@@ -113,6 +123,16 @@ Allow-Data-Deletion: ${geoData.allowDataDeletion || "No"}
 # allow data modification
 Allow-Data-Modification: ${geoData.allowDataModification || "No"}
 
+# documents
+${geoData.documents?.map((document) => `[${document.title}](${document.url})`).join("\n")}
+
+#host
+Host: ${geoData.host || "Not specified"}
+#sitemap
+Sitemap: ${geoData.sitemap || "Not specified"}
+#license and terms of use
+License: ${geoData.license || "Not specified"}
+
 ## Generated Information
 Generated at: ${new Date().toISOString()}
 Generator: llms-txt-generator-geo-ai
@@ -124,6 +144,7 @@ Generator: llms-txt-generator-geo-ai
   public async generate(): Promise<string> {
     try {
       const content = this.generateContent();
+
       const outputPath = path.join(
         this.options.outputDir,
         this.options.filename

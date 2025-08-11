@@ -27,7 +27,20 @@ async function runCLI() {
         allowDataStorage: 'No',
         allowDataDeletion: 'No',
         allowDataModification: 'No',
+        host: 'https://www.mysite.com',
+        sitemap: 'https://www.mysite.com/sitemap,xml',
+        license: 'your license and tearm of use',
         contact: 'me@geo.ai',
+        documents: [
+          {
+            title: 'API Refernce',
+            url: 'https://www.mysite.com/docs/api-refernce'
+          },
+          {
+            title: 'Frequently Asked Questions',
+            url: 'https://www.mysite.com/docs/faq'
+          }
+        ],
         userAgentRules: [
           {
             userAgent: '*',
@@ -145,7 +158,17 @@ Allow-Data-Usage: ${geoData.allowDataUsage || 'No'}
 Allow-Data-Storage: ${geoData.allowDataStorage || 'No'}
 Allow-Data-Deletion: ${geoData.allowDataDeletion || 'No'}
 Allow-Data-Modification: ${geoData.allowDataModification || 'No'}
+
+# Contact
 Contact: ${geoData.contact || 'me@geo.ai'}
+
+# Host
+Host: ${geoData.host || 'Not specified'}
+
+# Sitemap
+Sitemap: ${geoData.sitemap || 'Not specified'}
+# License and Terms of Use
+> ${geoData.license || 'Not specified'}
 
 ## user-agent rules
 ${geoData.userAgentRules.map((rule) => `User-agent: ${rule.userAgent}\n${rule.disallow.map((path) => `Disallow: ${path}`).join('\n')}`).join('\n\n')}
