@@ -32,6 +32,7 @@ export interface GeoData {
   sitemap?: string;
   license?: string;
   documents?: Document[];
+  language?: string;
 }
 
 export interface LLMSTxtConfig {

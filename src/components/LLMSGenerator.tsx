@@ -246,6 +246,26 @@ export const LLMSGenerator: React.FC<LLMSGeneratorProps> = ({
           placeholder="e.g., your license and tearm of use"
         />
       </div>
+      <div className="form-group">
+        <label htmlFor="language">Language:</label>
+        <input
+          id="language"
+          type="text"
+          value={geoData.language || ''}
+          onChange={(e) => handleInputChangeEvent('language', e)}
+          placeholder="e.g., en"
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="documents">Documents:</label>
+        <textarea
+          id="documents"
+          value={geoData.documents?.map((document) => `[${document.title}](${document.url})`).join('\n') || ''}
+          onChange={(e) => handleInputChangeEvent('documents', e)}
+          placeholder="e.g., [API Refernce](https://www.mysite.com/docs/api-refernce)\n[Frequently Asked Questions](https://www.mysite.com/docs/faq)"
+          rows={3}
+        />
+      </div>
       <button 
         onClick={handleGenerate} 
         disabled={isGenerating}

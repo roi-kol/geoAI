@@ -70,6 +70,7 @@ const config: LLMSTxtConfig = {
         disallow: ['/private/']
       },
     ]
+    language: 'en',
   },
   outputDir: './', // Output directory for llms.txt
   filename: 'llms.txt' // Output filename
@@ -122,6 +123,7 @@ export default config;
         disallow: ['/private/']
       },
     ]
+    language: 'en',
   },
   outputDir: './', // Output directory for llms.txt
   filename: 'llms.txt' // Output filename
